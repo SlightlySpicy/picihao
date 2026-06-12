@@ -1,0 +1,25 @@
+{
+  "list": [
+    {
+      "product": "M24*65",
+      "company": "A公司",
+      "project": "C项目",
+      "batchNo": "26060047",
+      "seq": 47,
+      "totalCapacity": 3000,
+      "useCount": 153,
+      "remaining": 1929,
+      "specNames": [
+        "M24*65",
+        "M24*50"
+      ],
+      "productType": "扭剪",
+      "specLengths": [
+        65,
+        50
+      ],
+      "status": "inuse",
+      "createTime": "2026/6/12 16:34:45"
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+[
+  {
+    "company": "A公司",
+    "project": "B项目",
+    "product": "M16*45",
+    "batchString": "26060047(1500)",
+    "totalCount": 1500,
+    "createTime": "2026/6/12 16:08:30"
+  },
+  {
+    "company": "A公司",
+    "project": "B项目",
+    "product": "M16*45",
+    "batchString": "26060047(1500)",
+    "totalCount": 1500,
+    "createTime": "2026/6/12 16:15:59"
+  },
+  {
+    "company": "A公司",
+    "project": "B项目",
+    "product": "M16*45",
+    "batchString": "26060047(1500)",
+    "totalCount": 1500,
+    "createTime": "2026/6/12 16:16:06"
+  },
+  {
+    "company": "A公司",
+    "project": "B项目",
+    "product": "M16*45",
+    "batchString": "26060047(1500)",
+    "totalCount": 1500,
+    "createTime": "2026/6/12 16:16:08"
+  },
+  {
+    "company": "A公司",
+    "project": "B项目",
+    "product": "M16*45",
+    "batchString": "26060047(1500)",
+    "totalCount": 1500,
+    "createTime": "2026/6/12 16:16:10"
+  },
+  {
+    "company": "A公司",
+    "project": "B项目",
+    "product": "M16*45",
+    "batchString": "26060047(150)",
+    "totalCount": 150,
+    "createTime": "2026/6/12 16:21:17"
+  },
+  {
+    "company": "A公司",
+    "project": "B项目",
+    "product": "M16*55",
+    "batchString": "26060047(150)",
+    "totalCount": 150,
+    "createTime": "2026/6/12 16:21:25"
+  },
+  {
+    "company": "A公司",
+    "project": "B项目",
+    "product": "M16*55",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:21:33"
+  },
+  {
+    "company": "A公司",
+    "project": "A项目",
+    "product": "M16*55",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:21:38"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M16*55",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:21:42"
+  },
+  {
+    "company": "A公司",
+    "project": "B项目",
+    "product": "M16*55",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:24:11"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M16*55",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:24:28"
+  },
+  {
+    "company": "A公司",
+    "project": "B项目",
+    "product": "M16*55",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:24:29"
+  },
+  {
+    "company": "A公司",
+    "project": "B项目",
+    "product": "M16*55",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:28:39"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M16*55",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:28:46"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M16*50",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:28:52"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*50",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:32:17"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*75",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:32:38"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*55",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:33:14"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*65",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:33:55"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*65",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:34:12"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*65",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:34:23"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*65",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:34:24"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*65",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:34:25"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*65",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:34:26"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*65",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:34:27"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*50",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:34:34"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*65",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:34:41"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*50",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:34:44"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*65",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:34:45"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*50",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:41:14"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*65",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:41:16"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*65",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:41:17"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*50",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:41:18"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*50",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:41:18"
+  },
+  {
+    "company": "A公司",
+    "project": "C项目",
+    "product": "M24*50",
+    "batchString": "26060047(153)",
+    "totalCount": 153,
+    "createTime": "2026/6/12 16:41:19"
+  }
+]

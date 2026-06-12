@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const configPath = path.join(__dirname, '../../config.js');
 
-// 基础配置
+// 配置
 const BATCH_CONFIG = {
   YEAR: new Date().getFullYear().toString().slice(-2),
   MONTH: new Date().getMonth() + 1,
