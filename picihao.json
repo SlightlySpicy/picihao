@@ -1,0 +1,98 @@
+[
+  {
+    "company": "A公司",
+    "project": "A项目",
+    "product": "M16*50",
+    "batchString": "26060002(1000)",
+    "totalCount": 1000,
+    "createTime": "2026/6/11 09:07:43"
+  },
+  {
+    "company": "A公司",
+    "project": "A项目",
+    "product": "M16*55",
+    "batchString": "26060002(1000)",
+    "totalCount": 1000,
+    "createTime": "2026/6/11 09:08:03"
+  },
+  {
+    "company": "A公司",
+    "project": "A项目",
+    "product": "M16*60",
+    "batchString": "26060002(1000)/26060003/26060004(9)",
+    "totalCount": 4009,
+    "createTime": "2026/6/11 09:08:32"
+  },
+  {
+    "company": "A公司",
+    "project": "A项目",
+    "product": "M16*35",
+    "batchString": "26060005(500)",
+    "totalCount": 500,
+    "createTime": "2026/6/11 09:09:00"
+  },
+  {
+    "company": "A公司",
+    "project": "A项目",
+    "product": "M16*45",
+    "batchString": "26060004(500)",
+    "totalCount": 500,
+    "createTime": "2026/6/11 09:10:11"
+  },
+  {
+    "company": "A公司",
+    "project": "A项目",
+    "product": "M16*45",
+    "batchString": "26060004(2491)/26060005(2500)/26060006(9)",
+    "totalCount": 5000,
+    "createTime": "2026/6/11 09:11:07"
+  },
+  {
+    "company": "A公司",
+    "project": "B项目",
+    "product": "M20*50",
+    "batchString": "26060007(500)",
+    "totalCount": 500,
+    "createTime": "2026/6/11 09:30:48"
+  },
+  {
+    "company": "A公司",
+    "project": "A项目",
+    "product": "M16*80",
+    "batchString": "26060008(400)",
+    "totalCount": 400,
+    "createTime": "2026/6/11 09:31:33"
+  },
+  {
+    "company": "A公司",
+    "project": "A项目",
+    "product": "M16*65",
+    "batchString": "26060008(100)",
+    "totalCount": 100,
+    "createTime": "2026/6/11 09:32:02"
+  },
+  {
+    "company": "A公司",
+    "project": "A项目",
+    "product": "M16*65",
+    "batchString": "26060008(1000)",
+    "totalCount": 1000,
+    "createTime": "2026/6/11 09:32:08"
+  },
+  {
+    "company": "A公司",
+    "project": "A项目",
+    "product": "M16*70",
+    "batchString": "26060008(1500)/26060009(500)",
+    "totalCount": 2000,
+    "createTime": "2026/6/11 09:33:25"
+  },
+  {
+    "company": "A公司",
+    "project": "A项目",
+    "product": "M16*55",
+    "batchString": "26060006(1000)",
+    "totalCount": 1000,
+    "createTime": "2026/6/11 09:33:58"
+  }
+]

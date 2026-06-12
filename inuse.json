@@ -1,0 +1,50 @@
+{
+  "list": [
+    {
+      "product": "M16*45",
+      "company": "A公司",
+      "project": "A项目",
+      "batchNo": "26060006",
+      "seq": 6,
+      "totalCapacity": 3000,
+      "useCount": 9,
+      "remaining": 1991,
+      "specLengths": [
+        45,
+        55
+      ],
+      "status": "inuse",
+      "createTime": "2026/6/11 09:11:07"
+    },
+    {
+      "product": "M20*50",
+      "company": "A公司",
+      "project": "B项目",
+      "batchNo": "26060007",
+      "seq": 7,
+      "totalCapacity": 3000,
+      "useCount": 500,
+      "remaining": 2500,
+      "specLengths": [
+        50
+      ],
+      "status": "inuse",
+      "createTime": "2026/6/11 09:30:48"
+    },
+    {
+      "product": "M16*70",
+      "company": "A公司",
+      "project": "A项目",
+      "batchNo": "26060009",
+      "seq": 9,
+      "totalCapacity": 3000,
+      "useCount": 500,
+      "remaining": 2500,
+      "specLengths": [
+        70
+      ],
+      "status": "inuse",
+      "createTime": "2026/6/11 09:33:25"
+    }
+  ]
+}
