@@ -6,7 +6,7 @@ const BATCH_CONFIG = {
   YEAR: new Date().getFullYear().toString().slice(-2),  // 当前年份
   MONTH:new Date().getMonth() + 1,
   BATCH_CAPACITY: 3000,    // 每批次容量
-  SEQ_START: 9,// 全局所有产品/公司/项目共用的最大批次序号
+  SEQ_START: 46,// 全局所有产品/公司/项目共用的最大批次序号
   ALLOW_LENGTH_DIFF_100: 15,
   ALLOW_LENGTH_DIFF_OVER100: 20
 };
