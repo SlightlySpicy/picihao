@@ -1,6 +1,6 @@
 // 批次规则（过期判断、长度匹配、批次加入规则）
 const { getSpecX, getSpecLength, isExperimentStatusMatch } = require('./specUtils');
-const { BATCH_CONFIG } = require('../../config');
+const { BATCH_CONFIG } = require('../config/batchConfig.js');
 
 // 判断批次号是否超过半年（过期）
 function isBatchExpired(batchNo, currentYear, currentMonth) {
@@ -11,7 +11,7 @@ function isBatchExpired(batchNo, currentYear, currentMonth) {
   const batchTotal = batchYY * 12 + batchMM;
   const currentTotal = currentYear * 12 + currentMonth;
   
-  return currentTotal - batchTotal > 6;
+  return currentTotal - batchTotal >= 6;
 }
 
 // 判断两个长度是否满足共用批次的规则

@@ -12,6 +12,11 @@ function getSpecX(product) {
   const match = product.match(/M(\d+)\*/);
   return match ? parseInt(match[1]) : 0;
 }
+//产品格式校验（M开头，*分隔，数字）
+function validateProductFormat(product) {
+  const reg = /^M\d+\*\d+$/;
+  return reg.test(product);
+}
 
 // 解析产品实验执行状态
 function getExperimentStatus(productType, product) {
@@ -41,5 +46,6 @@ module.exports = {
   getSpecLength,
   getSpecX,
   getExperimentStatus,
-  isExperimentStatusMatch
+  isExperimentStatusMatch,
+  validateProductFormat
 };

@@ -31,11 +31,10 @@ class BatchManager {
   const inuseItems = this.inuse.list || [];
   let restItems = [...inuseItems];
 
-  // 1. 第一轮：严格匹配（实验+长度）
+  // 1. 实验+长度匹配复用
   restItems = this._reuseBatchByExperimentAndLength(restItems, product, company, project, productType, remainingNeed, result, newInuseList);
   remainingNeed = count - result.reduce((sum, item) => sum + item.useCount, 0);
-
-  // 2. 第二轮：宽松仅长度匹配
+  // 2. 仅长度匹配
   if (remainingNeed > 0) {
     restItems = this._reuseBatchByLengthOnly(restItems, product, company, project, productType, remainingNeed, result, newInuseList);
     remainingNeed = count - result.reduce((sum, item) => sum + item.useCount, 0);
@@ -43,12 +42,12 @@ class BatchManager {
     // 无剩余需求，剩下所有旧批次全部原样存入newInuseList
     newInuseList.push(...restItems);
   }
-
-  // 第二轮走完后，剩下的restItems全部原样回收
+  //第二轮走完后,剩下的restItems全部原样回收
   if (remainingNeed > 0) {
     newInuseList.push(...restItems);
   }
-    newInuseList.push(...restItems);
+    // newInuseList.push(...restItems);
+    console.log('复用完成，剩余需求：', newInuseList);
   // 3. 剩余数量新建批次，新建的自动push进newInuseList
   if (remainingNeed > 0) {
     this._createNewBatch(remainingNeed, product, company, project, productType, result, newInuseList);
@@ -104,7 +103,7 @@ class BatchManager {
   }
 
   //复用（仅长度匹配）
-  _reuseBatchByLengthOnly(restItems, product, company, project, productType, remainingNeed, result) {
+  _reuseBatchByLengthOnly(restItems, product, company, project, productType, remainingNeed, result, newInuseList) {
     const tempList = [];
     for (const item of restItems) {
       if (remainingNeed <= 0) {

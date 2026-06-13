@@ -1,25 +1,128 @@
 {
   "list": [
     {
-      "product": "M24*65",
+      "product": "M24*50",
+      "company": "A公司",
+      "project": "B项目",
+      "batchNo": "26060061",
+      "seq": 61,
+      "totalCapacity": 3000,
+      "useCount": 100,
+      "remaining": 2500,
+      "specNames": [
+        "M24*50",
+        "M24*40",
+        "M24*45"
+      ],
+      "productType": "扭剪",
+      "specLengths": [
+        50,
+        40,
+        45
+      ],
+      "status": "inuse",
+      "createTime": "2026/6/13 13:41:06"
+    },
+    {
+      "product": "M24*100",
+      "company": "A公司",
+      "project": "A项目",
+      "batchNo": "26060066",
+      "seq": 66,
+      "totalCapacity": 3000,
+      "useCount": 100,
+      "remaining": 2800,
+      "specNames": [
+        "M24*100",
+        "M24*105"
+      ],
+      "productType": "扭剪",
+      "specLengths": [
+        100,
+        105
+      ],
+      "status": "inuse",
+      "createTime": "2026/6/13 13:47:03"
+    },
+    {
+      "product": "M24*40",
+      "company": "A公司",
+      "project": "A项目",
+      "batchNo": "26060065",
+      "seq": 65,
+      "totalCapacity": 3000,
+      "useCount": 100,
+      "remaining": 2700,
+      "specNames": [
+        "M24*40"
+      ],
+      "productType": "扭剪",
+      "specLengths": [
+        40
+      ],
+      "status": "inuse",
+      "createTime": "2026/6/13 13:45:34"
+    },
+    {
+      "product": "M24*50",
+      "company": "A公司",
+      "project": "A项目",
+      "batchNo": "26060063",
+      "seq": 63,
+      "totalCapacity": 3000,
+      "useCount": 100,
+      "remaining": 2700,
+      "specNames": [
+        "M24*50",
+        "M24*55",
+        "M24*60"
+      ],
+      "productType": "扭剪",
+      "specLengths": [
+        50,
+        55,
+        60
+      ],
+      "status": "inuse",
+      "createTime": "2026/6/13 13:44:39"
+    },
+    {
+      "product": "M24*50",
       "company": "A公司",
       "project": "C项目",
-      "batchNo": "26060047",
-      "seq": 47,
+      "batchNo": "26060062",
+      "seq": 62,
       "totalCapacity": 3000,
-      "useCount": 153,
-      "remaining": 1929,
+      "useCount": 100,
+      "remaining": 2800,
       "specNames": [
-        "M24*65",
         "M24*50"
       ],
       "productType": "扭剪",
       "specLengths": [
-        65,
         50
       ],
       "status": "inuse",
-      "createTime": "2026/6/12 16:34:45"
+      "createTime": "2026/6/13 13:42:46"
+    },
+    {
+      "product": "M24*70",
+      "company": "A公司",
+      "project": "A项目",
+      "batchNo": "26060064",
+      "seq": 64,
+      "totalCapacity": 3000,
+      "useCount": 100,
+      "remaining": 2900,
+      "specNames": [
+        "M24*70"
+      ],
+      "productType": "扭剪",
+      "specLengths": [
+        70
+      ],
+      "status": "inuse",
+      "createTime": "2026/6/13 13:45:20"
     }
   ]
 }
