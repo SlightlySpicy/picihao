@@ -7,7 +7,7 @@ const BATCH_CONFIG = {
   YEAR: new Date().getFullYear().toString().slice(-2),
   MONTH: new Date().getMonth() + 1,
   BATCH_CAPACITY: 3000,
-  SEQ_START: 66,
+  SEQ_START: 87,
   ALLOW_LENGTH_DIFF_100: 15,
   ALLOW_LENGTH_DIFF_OVER100: 20
 };

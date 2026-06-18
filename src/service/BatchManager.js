@@ -27,39 +27,43 @@ class BatchManager {
   assignBatch(product, company, project, count,productType) {
   let remainingNeed = count;
   const result = [];
-  const newInuseList = []; // 最终要存进inuse.json的全部在用批次
+  const newInuseList = [];
   const inuseItems = this.inuse.list || [];
   let restItems = [...inuseItems];
+
+   const targetLen = getSpecLength(product);
+  restItems.sort((a, b) => {
+    const aLenAvg = a.specLengths.reduce((s, v) => s + v, 0) / a.specLengths.length;
+    const bLenAvg = b.specLengths.reduce((s, v) => s + v, 0) / b.specLengths.length;
+    const diffA = Math.abs(aLenAvg - targetLen);
+    const diffB = Math.abs(bLenAvg - targetLen);
+    return diffA - diffB;
+  });
 
   // 1. 实验+长度匹配复用
   restItems = this._reuseBatchByExperimentAndLength(restItems, product, company, project, productType, remainingNeed, result, newInuseList);
   remainingNeed = count - result.reduce((sum, item) => sum + item.useCount, 0);
-  // 2. 仅长度匹配
+
+  // 2. 仅长度匹配复用
   if (remainingNeed > 0) {
     restItems = this._reuseBatchByLengthOnly(restItems, product, company, project, productType, remainingNeed, result, newInuseList);
     remainingNeed = count - result.reduce((sum, item) => sum + item.useCount, 0);
-  } else {
-    // 无剩余需求，剩下所有旧批次全部原样存入newInuseList
-    newInuseList.push(...restItems);
   }
-  //第二轮走完后,剩下的restItems全部原样回收
-  if (remainingNeed > 0) {
-    newInuseList.push(...restItems);
-  }
-    // newInuseList.push(...restItems);
-    console.log('复用完成，剩余需求：', newInuseList);
-  // 3. 剩余数量新建批次，新建的自动push进newInuseList
+
+  // 【修复点1】统一把两轮过滤后剩余所有未复用批次全部加入newInuseList，不再分支判断
+  newInuseList.push(...restItems);
+
+  // 3. 剩余需求新建批次
   if (remainingNeed > 0) {
     this._createNewBatch(remainingNeed, product, company, project, productType, result, newInuseList);
   }
 
-  // 覆盖写入完整列表
+  // 覆盖写入
   this.inuse.list = newInuseList;
   saveBatchConfig({ SEQ_START: this.globalMaxSeq });
   saveInuse(this.inuse);
   const batchStr = formatBatchString(result, this.yearStr, this.monthStr, this.BATCH_CAPACITY);
   savePiciRecord(product, company, project, count, batchStr);
-
   return {
     product, company, project,
     totalCount: count,
@@ -103,59 +107,63 @@ class BatchManager {
   }
 
   //复用（仅长度匹配）
-  _reuseBatchByLengthOnly(restItems, product, company, project, productType, remainingNeed, result, newInuseList) {
-    const tempList = [];
-    for (const item of restItems) {
-      if (remainingNeed <= 0) {
-        tempList.push(item);
-        continue;
-      }
-      const expired = isBatchExpired(item.batchNo, this.currentYear, this.currentMonth);
-      const sameType = item.productType === productType;
-      const sameCompanyProj = item.company === company && item.project === project;
-      const newX = getSpecX(product);
-      const batchFirstSpec = item.specNames?.[0];
-      const sameX = batchFirstSpec ? (getSpecX(batchFirstSpec) === newX) : true;
-
-      if (expired || !sameType || !sameCompanyProj || !sameX) {
-        tempList.push(item);
-        continue;
-      }
-
-      const newLen = getSpecLength(product);
-      const existingLengths = item.specLengths || [];
-      let lenOk = true;
-      if (existingLengths.length > 0) {
-        const minLen = Math.min(...existingLengths);
-        const maxLen = Math.max(...existingLengths);
-        lenOk = isLengthMatch(newLen, minLen) && isLengthMatch(newLen, maxLen);
-      }
-
-      if (lenOk) {
-        const use = Math.min(remainingNeed, item.remaining);
-        result.push({
-          batchNo: item.batchNo,
-          useCount: use,
-          remainingInBatch: item.remaining - use,
-          from: '复用(仅长度匹配)'
-        });
-        saveHistory({
-          ...item, useCount: use,
-          remaining: item.remaining - use,
-          status: item.remaining - use > 0 ? 'inuse' : 'used',
-          action: '复用(仅长度匹配)'
-        });
-        updateBatchSpecs(item, product);
-        if (item.remaining - use > 0) {
-          tempList.push({ ...item, remaining: item.remaining - use });
-        }
-        remainingNeed -= use;
-      } else {
-        tempList.push(item);
-      }
+_reuseBatchByLengthOnly(restItems, product, company, project, productType, remainingNeed, result, newInuseList) {
+  const tempList = [];
+  const targetX = getSpecX(product);
+  const targetLen = getSpecLength(product);
+  for (const item of restItems) {
+    if (remainingNeed <= 0) {
+      tempList.push(item);
+      continue;
     }
-    return tempList;
+    // 1. 校验全部规格直径统一
+    const specNames = item.specNames || [];
+    const allSameDiameter = specNames.every(name => getSpecX(name) === targetX);
+    if (!allSameDiameter) {
+      tempList.push(item);
+      continue;
+    }
+    // 2. 补充同公司、同项目、同类型校验（之前缺失）
+    if (item.company !== company || item.project !== project || item.productType !== productType) {
+      tempList.push(item);
+      continue;
+    }
+    const batchLengths = item.specLengths || [];
+    if (batchLengths.length === 0) {
+      tempList.push(item);
+      continue;
+    }
+    // 新增：和第一层canJoinBatch保持一致，必须同时满足最小、最大长度公差
+    const minLen = Math.min(...batchLengths);
+    const maxLen = Math.max(...batchLengths);
+    const fullRangeMatch = isLengthMatch(targetLen, minLen) && isLengthMatch(targetLen, maxLen);
+    const lenOk = fullRangeMatch && item.remaining > 0;
+
+    if (lenOk) {
+      const use = Math.min(remainingNeed, item.remaining);
+      result.push({
+        batchNo: item.batchNo,
+        useCount: use,
+        remainingInBatch: item.remaining - use,
+        from: '复用(仅长度匹配)'
+      });
+      saveHistory({
+        ...item, useCount: use,
+        remaining: item.remaining - use,
+        status: item.remaining - use > 0 ? 'inuse' : 'used',
+        action: '复用(仅长度匹配)'
+      });
+      updateBatchSpecs(item, product);
+      if (item.remaining - use > 0) {
+        newInuseList.push({ ...item, remaining: item.remaining - use });
+      }
+      remainingNeed -= use;
+    } else {
+      tempList.push(item);
+    }
   }
+  return tempList;
+}
 
   //新建批次
   _createNewBatch(remainingNeed, product, company, project, productType, result, newInuseList) {
