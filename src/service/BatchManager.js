@@ -1,7 +1,7 @@
 // 批次管理核心类
 // const { loadInuse, saveInuse } = require('../storage/inuse');
 // const { saveHistory } = require('../storage/history');
-const { loadInuse, saveInuse, saveHistory, savePiciRecord } = require('../storage/dbStorage');
+const { loadInuse, saveInuse, saveHistory, savePiciRecord } = require('../storage/dbstorage');
 //const { savePiciRecord } = require('../storage/picihao');
 const { BATCH_CONFIG, saveBatchConfig } = require('../config/batchConfig');
 const { isBatchExpired, isLengthMatch, canJoinBatch, updateBatchSpecs } = require('../utils/batchUtils');
