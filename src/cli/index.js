@@ -1,12 +1,17 @@
 const BatchManager = require('../service/BatchManager');
 const { validateProductFormat } = require('../utils/specUtils');
 
-async function runCli() {
-  const args = process.argv.slice(2);
+async function runCli(inputArgs) {
+  const args = inputArgs ;
   if (args.length < 5) {
-    console.log('用法: node index.js "产品" "公司" "项目" 数量 "产品类型(大六角/扭剪)"');
-    console.log('示例: node index.js "M16*45" "A公司" "B项目" 1500 "扭剪"');
-    process.exit(1);
+    console.log('参数: "产品" "公司" "项目" 数量 "产品类型(大六角/扭剪)"');
+    console.log('示例:  spec:"M16*45" company:"A公司" project:"B项目" num:1500 type:"扭剪"');
+     if (!inputArgs) {
+      console.log(msg);
+      process.exit(1);
+    } else {
+      throw new Error(msg);
+    }
   }
 
   const [product, company, project, countStr, productType] = args;
@@ -28,7 +33,7 @@ async function runCli() {
     }
 
     const bm = new BatchManager();
-    const res = bm.assignBatch(product, company, project, count, productType);
+    const res = await bm.assignBatch(product, company, project, count, productType);
 
     console.log('\n================================');
     console.log('产品：', product);
@@ -43,6 +48,7 @@ async function runCli() {
     console.log('--------------------------------');
     console.log('最终批次号：', res.batchString);
     console.log('================================\n');
+    return res.batchString;
     }
 
 module.exports = { runCli };
