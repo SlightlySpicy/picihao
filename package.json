@@ -21,7 +21,10 @@
   "homepage": "https://github.com/SlightlySpicy/picihao#readme",
   "dependencies": {
     "cors": "^2.8.6",
+    "crypto": "^1.0.1",
     "express": "^5.2.1",
-    "mysql2": "^3.22.5"
+    "joi": "^18.2.3",
+    "mysql2": "^3.22.5",
+    "xss": "^1.0.15"
   }
 }
