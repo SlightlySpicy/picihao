@@ -1,5 +1,6 @@
 const { pool, query } = require('../config/db');
 const { filterXSS } = require('../utils/validateUtil');
+const { formatMysqlTime } = require('../utils/formatUtils');
 
 /**
  * 按月获取下一个序列号，每月独立自增，新月份自动从1开始
