@@ -3,7 +3,7 @@ const { getBizRel, listBizRelByX, getStockByBatchNo, reuseStock, createStockBatc
 const { BATCH_CONFIG } = require('../config/batchConfig');
 const { isBatchExpired, isLengthMatch, canJoinBatch, updateBatchSpecs } = require('../utils/batchUtils');
 const { getSpecX, getSpecLength } = require('../utils/specUtils');
-const { formatBatchString } = require('../utils/formatUtils');
+const { formatBatchString , formatMysqlTime } = require('../utils/formatUtils');
 const { query } = require('../config/db');
 const { isExperimentStatusMatch } = require('../utils/specUtils');
 // const { act } = require('react');

@@ -219,7 +219,7 @@ async function saveHistory(data) {
     data.remaining,
     data.status,
     data.action,
-    new Date().toLocaleString()
+    formatMysqlTime()
   ]);
 }
 async function savePiciRecord(product, company, project, totalNum, batchStr) {
@@ -228,7 +228,7 @@ async function savePiciRecord(product, company, project, totalNum, batchStr) {
     (company,project,product,batch_string,total_count,create_time)
     VALUES (?,?,?,?,?,?)
   `;
-  await query(sql, [company, project, product, batchStr, totalNum, new Date().toLocaleString()]);
+  await query(sql, [company, project, product, batchStr, totalNum, formatMysqlTime()]);
 }
 
 // 导出新API，废弃loadInuse/saveInuse
