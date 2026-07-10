@@ -64,34 +64,10 @@ function canJoinBatch(batchItem, newProduct, company, project, productType, curr
   return isExperimentMatch && isLengthMatchResult;
 }
 
-// 给批次追加规格长度/名称
-function updateBatchSpecs(batchItem, newProduct) {
-  const newX = getSpecX(newProduct);
-  // 批次基准直径（取第一条规格）
-  const firstSpec = batchItem.specNames?.[0];
-  if (firstSpec) {
-    const baseX = getSpecX(firstSpec);
-    // 直径不一致直接退出，不追加规格
-    if (newX !== baseX) {
-      console.error(`不同直径！直径${baseX}，新增规格${newProduct}直径${newX}`);
-      return;
-    }
-  }
 
-  const len = getSpecLength(newProduct);
-  if (!batchItem.specNames) batchItem.specNames = [];
-  if (!batchItem.specNames.includes(newProduct)) {
-    batchItem.specNames.push(newProduct);
-  }
-  if (!batchItem.specLengths) batchItem.specLengths = [];
-  if (!batchItem.specLengths.includes(len)) {
-    batchItem.specLengths.push(len);
-  }
-}
 
 module.exports = {
   isBatchExpired,
   isLengthMatch,
   canJoinBatch,
-  updateBatchSpecs
 };

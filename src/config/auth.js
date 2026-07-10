@@ -4,8 +4,8 @@ const crypto = require('crypto');
 // 合法密钥列表，生产建议从环境变量读取 process.env.AUTH_AK_LIST
 const AUTH_SECRETS = [
   {
-    ak: "bolt_api_ak_20260702",
-    sk: "bolt_api_sk_@#2026BoltBatch"
+    ak: "boltbatch",
+    sk: "boltbatch2026"
   }
 ];
 

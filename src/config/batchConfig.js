@@ -1,26 +1,10 @@
-const fs = require('fs');
-const path = require('path');
-const configPath = path.join(__dirname, './batchConfig.js');
-
-// 配置
+// 固定年月常量，动态取当前年月可自行修改，此处硬编码适配业务
 const BATCH_CONFIG = {
   YEAR: new Date().getFullYear().toString().slice(-2),
-  MONTH: new Date().getMonth() + 1,
+  MONTH: String(new Date().getMonth() + 1).padStart(2, '0'),
   BATCH_CAPACITY: 3000,
-  SEQ_START: 118,
   ALLOW_LENGTH_DIFF_100: 15,
   ALLOW_LENGTH_DIFF_OVER100: 20
 };
-
-// 自动更新 SEQ_START 到 config.js
-function saveBatchConfig(newConfig) {
-  try {
-    let content = fs.readFileSync(configPath, 'utf8');
-    content = content.replace(/SEQ_START:\s*\d+/, `SEQ_START: ${newConfig.SEQ_START}`);
-    fs.writeFileSync(configPath, content, 'utf8');
-  } catch (err) {
-    console.error('更新 config 失败', err);
-  }
-}
-
-module.exports = { BATCH_CONFIG, saveBatchConfig };
+// 删除saveBatchConfig函数，彻底废弃本地序列号文件
+module.exports = { BATCH_CONFIG };

@@ -31,19 +31,11 @@ async function runCli(inputArgs) {
     const bm = new BatchManager();
     const res = await bm.assignBatch(product, company, project, count, productType);
 
-    console.log('\n================================');
-    console.log('产品：', product);
-    console.log('公司：', company);
-    console.log('项目：', project);
-    console.log('申请数量：', count);
-    console.log('产品类型：', productType);
-    console.log('--------------------------------');
+    console.log('----------------------\n', product, company, project, count, productType);
     res.batches.forEach((item, i) => {
         console.log(`${i+1}. ${item.batchNo} | 使用：${item.useCount} | 剩余：${item.remainingInBatch} | ${item.from}`);
     });
-    console.log('--------------------------------');
     console.log('最终批次号：', res.batchString);
-    console.log('================================\n');
     return res.batchString;
     }
 
