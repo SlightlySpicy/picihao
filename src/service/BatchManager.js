@@ -157,7 +157,7 @@ _checkBatchCanJoin(batchNo, newProduct, company, project, productType, targetLen
       try {
         const useCount = Math.min(remainingNeed, this.BATCH_CAPACITY);
         const remainStock = this.BATCH_CAPACITY - useCount;
-        const createTime = new Date().toLocaleString();
+        const createTime = formatMysqlTime();
         const tempBatchNo = await createStockBatch(yearMonth, this.BATCH_CAPACITY, remainStock,company, project, productType, product, specX, specLen, createTime);
         // const seqStr = String(currentSeq).padStart(4, '0');
         // const tempBatchNo = `${yearMonth}${seqStr}`;
